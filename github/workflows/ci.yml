@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up C++ build environment
+      uses: actions/setup-cpp@v2
+      with:
+        compiler: 'gcc'
+      
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+        components: 'qtbase qtdeclarative qttools'
+      
+    - name: Build Project
+      run: |
+        chmod +x build.sh
+        ./build.sh
+      
+    - name: Build Tests
+      run: |
+        chmod +x buildTest.sh
+        ./buildTest.sh
+      
+    - name: Run Tests
+      run: |
+        chmod +x runTest.sh
+        ./runTest.sh
