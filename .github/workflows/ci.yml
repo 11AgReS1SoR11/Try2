@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,9 +21,11 @@ jobs:
       with:
         version: '5.15.2'
         components: 'qtbase qtdeclarative qttools qtlocation qtwebenginewidgets qtnetwork'
+    
     - name: PRINT
       run : | 
           ls
+          
     - name: Build Project
       run: |
         chmod +x build.sh
