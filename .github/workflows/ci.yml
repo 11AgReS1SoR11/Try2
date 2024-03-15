@@ -19,7 +19,7 @@ jobs:
         compiler: 'gcc'
       
     - name: Install Qt
-      uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@v3
       with:
         version: '5.15.2'
         components: 'qtbase qtdeclarative qttools'
