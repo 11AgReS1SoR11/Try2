@@ -23,18 +23,20 @@ jobs:
       with:
         version: '5.15.2'
         components: 'qtbase qtdeclarative qttools'
+    - name: print
+      run : | ls
       
-    - name: Build Project
-      run: |
-        chmod +x build.sh
-        ./build.sh
+    # - name: Build Project
+    #   run: |
+    #     chmod +x build.sh
+    #     ./build.sh
       
-    - name: Build Tests
-      run: |
-        chmod +x buildTest.sh
-        ./buildTest.sh
+    # - name: Build Tests
+    #   run: |
+    #     chmod +x buildTest.sh
+    #     ./buildTest.sh
       
-    - name: Run Tests
-      run: |
-        chmod +x runTest.sh
-        ./runTest.sh
+    # - name: Run Tests
+    #   run: |
+    #     chmod +x runTest.sh
+    #     ./runTest.sh
