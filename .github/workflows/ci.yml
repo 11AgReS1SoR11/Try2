@@ -9,23 +9,25 @@ on:
       - main
 
 jobs:
-  build:
+  install_packages:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
       with:
-        version: '5.15.2'
-        components: 'qtbase qtdeclarative qttools qtlocation qtwebenginewidgets qtnetwork'
-    
-    - name: PRINT
-      run : | 
-          ls
-          
+        # version: '5.15.2'
+        # modules: 'qtwebengine5-dev'
+        setup-python: false
+
+  build:
+    needs: [install_packages]
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Build Project
       run: |
         chmod +x build.sh
@@ -35,7 +37,12 @@ jobs:
       run: |
         chmod +x buildTest.sh
         ./buildTest.sh
-      
+
+  testing:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Run Tests
       run: |
         chmod +x runTest.sh
