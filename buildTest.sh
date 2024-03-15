@@ -9,3 +9,4 @@ qmake ../test.pro
 
 # Building the project using make
 make
+

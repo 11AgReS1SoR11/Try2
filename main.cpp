@@ -16,3 +16,4 @@ int main(int argc, char *argv[]) {
     // Запускаем цикл обработки событий
     return app.exec();
 }
+
