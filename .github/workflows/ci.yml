@@ -25,7 +25,6 @@ jobs:
         components: 'qtbase qtdeclarative qttools'
     - name: print
       run : | ls
-      
     # - name: Build Project
     #   run: |
     #     chmod +x build.sh
