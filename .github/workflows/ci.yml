@@ -13,10 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Set up C++ build environment
-      uses: actions/setup-cpp@v2
-      with:
-        compiler: 'gcc'
+    # - name: Set up C++ build environment
+    #   uses: actions/setup-cpp@v2
+    #   with:
+    #     compiler: 'gcc'
       
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
