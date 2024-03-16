@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
     button.resize(200, 100);
 
     // Отображаем кнопку
+
     button.show();
 
     // Запускаем цикл обработки событий
