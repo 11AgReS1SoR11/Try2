@@ -1,9 +1,10 @@
 #include <QApplication>
 #include <QPushButton>
+#include <QWebEngineView>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-
+    QWebEngineView* webView = nullptr;
     // Создаем кнопку
     QPushButton button("Нажми меня!");
 
@@ -15,4 +16,6 @@ int main(int argc, char *argv[]) {
 
     // Запускаем цикл обработки событий
     return app.exec();
+
 }
+
