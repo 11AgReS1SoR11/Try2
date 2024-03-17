@@ -1,4 +1,5 @@
 # Проект для сборки двух исполняемых файлов
+QT += quick location widgets network webenginewidgets
 
 TEMPLATE = app
 
